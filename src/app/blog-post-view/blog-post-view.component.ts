@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { BlogPost } from '../blog-post';
+import { TruncatePipe } from '../truncate.pipe';
 
 @Component({
   selector: 'app-blog-post-view',
@@ -9,11 +10,10 @@ import { BlogPost } from '../blog-post';
 export class BlogPostViewComponent implements OnInit {
 
   @Input() post: BlogPost;
-  constructor() { }
+  constructor(private truncatePipe: TruncatePipe) { }
 
   ngOnInit() {
-    // this.title = 'Blog post';
-    // this.summary = 'Blog post summary'
+   this.post.summary = this.truncatePipe.transform(this.post.summary, 30);
   }
 
 }
