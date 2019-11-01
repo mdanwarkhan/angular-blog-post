@@ -1,4 +1,5 @@
 <app-blog-post-view
-  *ngFor="let post of blogPost" 
+  *ngFor="let post of blogPost[currentPage]" 
   [post]="post">
 </app-blog-post-view>
+<app-paginator (pageNbrClicked)="updatePage($event)" [numberOfPages]="blogPost.length"></app-paginator>

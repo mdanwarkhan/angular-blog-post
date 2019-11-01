@@ -5,13 +5,15 @@ import { AppComponent } from './app.component';
 import { BlogListComponent } from './blog-list/blog-list.component';
 import { BlogPostViewComponent } from './blog-post-view/blog-post-view.component';
 import { TruncatePipe } from './truncate.pipe';
+import { PaginatorComponent } from './paginator/paginator.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     BlogListComponent,
     BlogPostViewComponent,
-    TruncatePipe
+    TruncatePipe,
+    PaginatorComponent
   ],
   imports: [
     BrowserModule
