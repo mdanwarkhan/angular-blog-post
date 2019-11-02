@@ -21,4 +21,8 @@ export class BlogPostViewComponent implements OnInit {
   showFullsummary() {
     this.post.summary = this.fullSummary;
   }
+  
+  togglefav() {
+    this.post.isFav = !this.post.isFav;
+  }
 }

@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, ChangeDetectionStrategy } from '@angular/core';
 import { BlogPost } from '../blog-post';
 import { BlogPostViewComponent } from '../blog-post-view/blog-post-view.component'
 import { BlogDataService } from '../blog-data.service';
@@ -6,7 +6,8 @@ import { BlogDataService } from '../blog-data.service';
 @Component({
   selector: 'app-blog-list',
   templateUrl: './blog-list.component.html',
-  styleUrls: ['./blog-list.component.css']
+  styleUrls: ['./blog-list.component.css'],
+  changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class BlogListComponent implements OnInit {
 
@@ -31,6 +32,19 @@ export class BlogListComponent implements OnInit {
     // this.blogPostViewComponent.showFullsummary();
     this.blogPostViewComponents
     .forEach( bp => bp.showFullsummary());
+  }
+
+  favoriteAll() {
+    // this.blogPost[this.currentPage].
+    // forEach( post => post.isFav = true);
+
+    this.blogPost[this.currentPage] =
+    this.blogPost[this.currentPage]
+    .map( post => ({
+      title: post.title,
+      summary: post.summary,
+      isFav: true
+    })
   }
 }
 

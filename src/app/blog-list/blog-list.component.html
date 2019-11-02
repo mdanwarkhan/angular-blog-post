@@ -1,4 +1,10 @@
-<a href="#" (click)="expandAll()">Expand All</a>
+<span class="expandbtn">
+    <a href="#" (click)="expandAll()" class="badge badge-dark">Expand All</a>
+</span>
+<span class="expandbtn">
+    <a href="#" (click)="favoriteAll()" class="badge badge-dark">Favorite All</a>
+</span>
+
 <app-blog-post-view
   #view
   *ngFor="let post of blogPost[currentPage]" 
