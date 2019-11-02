@@ -13,4 +13,12 @@
 <!-- <app-blog-post-view
   [post]="blogPost[0][0]" #view>
 </app-blog-post-view> -->
-<app-paginator (pageNbrClicked)="updatePage($event)" [numberOfPages]="blogPost.length"></app-paginator>
+<app-paginator 
+   (pageNbrClicked)="updatePage($event)" 
+   [numberOfPages]="blogPost.length">
+</app-paginator>
+
+<!-- <app-card>
+  <h2>Title</h2>
+  <p>Summary</p>
+</app-card> -->
